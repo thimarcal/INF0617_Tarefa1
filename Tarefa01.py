@@ -1,8 +1,12 @@
-import os, time, string
+import os, time, string, sys
 
-os.chdir('D:\\Thiago\\Studies\\Unicamp\\MDC\\INF-617\\Tarefas\\INF0617_Tarefa1')
+#os.chdir('D:\\Thiago\\Studies\\Unicamp\\MDC\\INF-617\\Tarefas\\INF0617_Tarefa1')
+os.chdir('/Users/thiagom/Documents/Studies/Unicamp/MDC/INF-617/Tarefas/INF0617_Tarefa1')
 
-shouldPrint = False
+if len(sys.argv) == 2: 
+    shouldPrint = (str(sys.argv[1]) == True)
+else:
+    shouldPrint = False
 
 filenames = []
 for file in os.listdir('./txt'):
@@ -68,7 +72,11 @@ if __name__ == '__main__':
     from multiprocessing import Process
     from multiprocessing import Pool
 
-    print("Processamento Serial", proc_serial())
-    print("Processamento Paralelo", proc_paralelo())
-    print("Processamento em Pool", proc_pool())
+    processamento_serial = proc_serial()
+    processamento_paralelo = proc_paralelo()
+    processamento_pool = proc_pool()
+
+    print("Processamento Serial", processamento_serial)
+    print("Processamento Paralelo", processamento_paralelo)
+    print("Processamento em Pool", processamento_pool)
 
