@@ -1,0 +1,9 @@
+Modo de Execução:
+
+- Para executar o projeto:
+  - defina na linha os.chdir o caminho onde se encontra a pasta 'txt'
+  - No terminal, execute:
+    python Tarefa01.py <True/False>
+    (ou python3 caso a versão 3.6 não seja a default)
+
+    o parâmetro True/False, vai habilitar ou não a impressão do resultado para cada arquivo individualmente. Caso seja False (ou não colocado o parâmetro), imprimirá apenas o resultado de tempo para cada tipo de busca. 
