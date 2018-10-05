@@ -57,9 +57,9 @@ def proc_paralelo():
     return end_time-start_time
 
 
-def proc_pool():
+def proc_pool(processes_number=16):
     start_time = time.time()
-    pool = Pool(processes=16)
+    pool = Pool(processes=processes_number)
     pool.map(processar, filenames)
     pool.close()
     pool.join()
@@ -74,9 +74,9 @@ if __name__ == '__main__':
 
     processamento_serial = proc_serial()
     processamento_paralelo = proc_paralelo()
-    processamento_pool = proc_pool()
+    processamento_pool = proc_pool(16)
 
     print("Processamento Serial", processamento_serial)
     print("Processamento Paralelo", processamento_paralelo)
-    print("Processamento em Pool", processamento_pool)
+    print("Processamento em Pool: ", processamento_pool)
 
